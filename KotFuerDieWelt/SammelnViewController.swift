@@ -9,10 +9,11 @@
 import UIKit
 import MapKit
 
-class SammelnViewController :UIViewController{
+class SammelnViewController :UIViewController, CLLocationManagerDelegate{
     private var mapView :MKMapView!
     private var popUpView :UIView!
     private var blurView :UIVisualEffectView!
+    private let locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
@@ -21,18 +22,23 @@ class SammelnViewController :UIViewController{
         super.navigationController?.navigationBar.prefersLargeTitles = true
         
         mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
-//        mapView.showsUserLocation = true
-//        mapView.setUserTrackingMode(.follow, animated: true)
-//
-//        let userLocation = mapView.userLocation.coordinate
-//        mapView.setCenter(userLocation, animated: true)
-//        mapView.userTrackingMode = .follow
+        
+        //GPS Authorization
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self as! CLLocationManagerDelegate
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        mapView.showsUserLocation = true
+        mapView.setUserTrackingMode(.follow, animated: true)
         
         
         self.view.addSubview(mapView)
         
         //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
     }
+    
     
     
     func openPopUp(isTrashcan: Bool, location: CLLocationCoordinate2D, attributes:Array<String>){
@@ -48,11 +54,9 @@ class SammelnViewController :UIViewController{
         detailedMapView.isRotateEnabled = false
         detailedMapView.isPitchEnabled = false
         
-        //let viewRegion = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: CLLocationDegrees.distance(0.1), longitudeDelta: CLLocationDegrees.distance(0.1)))
+        
         let viewRegion = MKCoordinateRegionMake(location, MKCoordinateSpanMake(0.005, 0.005))
         detailedMapView.setRegion(viewRegion, animated: true)
-        
-        
         
         self.popUpView.addSubview(detailedMapView)
         
@@ -94,4 +98,5 @@ class SammelnViewController :UIViewController{
         popUpView.removeFromSuperview()
         blurView.removeFromSuperview()
     }
+    
 }

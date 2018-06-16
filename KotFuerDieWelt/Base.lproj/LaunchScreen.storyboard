@@ -18,29 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yg5-8X-YWh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AZ-hM-V8W">
                                 <rect key="frame" x="123" y="289.5" width="128" height="118"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="Klc-PH-Vae"/>
-                                    <constraint firstAttribute="height" constant="118" id="Nhy-wj-QFO"/>
+                                    <constraint firstAttribute="width" constant="128" id="Km3-Xg-k8e"/>
+                                    <constraint firstAttribute="height" constant="118" id="il6-aj-Ik6"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="mcU-0X-PMp">
                                 <rect key="frame" x="123" y="279.5" width="128" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="YJy-JA-4w3"/>
-                                    <constraint firstAttribute="width" constant="128" id="xcu-JS-3A8"/>
+                                    <constraint firstAttribute="height" constant="128" id="GfQ-zg-kNa"/>
+                                    <constraint firstAttribute="width" constant="128" id="ndb-Ig-xv8"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.85490196078431369" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mcU-0X-PMp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fyO-C1-2th"/>
-                            <constraint firstItem="yg5-8X-YWh" firstAttribute="bottom" secondItem="mcU-0X-PMp" secondAttribute="bottom" id="iGx-iQ-3xf"/>
-                            <constraint firstItem="mcU-0X-PMp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="oPB-gW-Yzg"/>
-                            <constraint firstItem="yg5-8X-YWh" firstAttribute="leading" secondItem="mcU-0X-PMp" secondAttribute="leading" id="qLn-qF-7Ze"/>
-                            <constraint firstItem="yg5-8X-YWh" firstAttribute="trailing" secondItem="mcU-0X-PMp" secondAttribute="trailing" id="zcz-jJ-Ciu"/>
+                            <constraint firstItem="7AZ-hM-V8W" firstAttribute="leading" secondItem="mcU-0X-PMp" secondAttribute="leading" id="AhM-YC-uvg"/>
+                            <constraint firstItem="mcU-0X-PMp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UuX-2p-hKb"/>
+                            <constraint firstItem="7AZ-hM-V8W" firstAttribute="bottom" secondItem="mcU-0X-PMp" secondAttribute="bottom" id="aEQ-7A-sK1"/>
+                            <constraint firstItem="mcU-0X-PMp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kIm-39-OCb"/>
+                            <constraint firstItem="7AZ-hM-V8W" firstAttribute="trailing" secondItem="mcU-0X-PMp" secondAttribute="trailing" id="oag-Fs-aGX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
