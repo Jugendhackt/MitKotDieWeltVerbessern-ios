@@ -14,7 +14,7 @@
         <scene sceneID="ig1-8k-dxX">
             <objects>
                 <navigationController title="Sammeln" id="pbc-1x-yzP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Dv9-Oy-qEv"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="Sammeln" id="Dv9-Oy-qEv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UQP-x8-xaC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,7 +47,7 @@
         <scene sceneID="ucV-VP-uZc">
             <objects>
                 <navigationController title="Melden" id="gAQ-j4-iTw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Melden" id="gxO-ZG-bQn"/>
+                    <tabBarItem key="tabBarItem" title="Melden" image="Melden" id="gxO-ZG-bQn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZvC-vF-1Wt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -80,7 +80,7 @@
         <scene sceneID="w1v-7Y-KVi">
             <objects>
                 <navigationController id="u4a-fg-7wD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Highscore" selectedImage="Score" id="2n7-uO-dy4"/>
+                    <tabBarItem key="tabBarItem" title="Highscore" image="Score" selectedImage="Score" id="2n7-uO-dy4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AdN-EI-nBy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -130,6 +130,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Score" width="10" height="10"/>
+        <image name="Melden" width="25" height="25"/>
+        <image name="Sammeln" width="25" height="25"/>
+        <image name="Score" width="25" height="25"/>
     </resources>
 </document>

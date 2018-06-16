@@ -20,21 +20,14 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.view.backgroundColor = UIColor(red: 255/255, green: 218/255, blue: 22/255, alpha: 1.0)
-        //punktestandView()
         punkteInfoLabel()
         punktestandLabel(punktestand: 10)
         bestenListeTableViewFunc()
-        
     }
     
-   /* func punktestandView() {
-        let view = UIView(frame: CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)! + 10, width: self.view.bounds.width, height: 120))
-        view.backgroundColor = UIColor(red: 255/255, green: 218/255, blue: 22/255, alpha: 1.0)
-        
-        self.view.addSubview(view)
-    }*/
     
     func punkteInfoLabel () {
 
@@ -88,11 +81,9 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-        print ("offsetY: \(offsetY) | contentHeight \(contentHeight)")
         
         if offsetY > contentHeight - scrollView.frame.height {
             if !fetchingMore {
-                print("beginBatchFetch!")
                 beginBatchFetch()
             }
         }
