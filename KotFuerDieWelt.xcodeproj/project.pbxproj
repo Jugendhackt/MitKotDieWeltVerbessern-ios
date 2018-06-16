@@ -15,6 +15,7 @@
 		B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */; };
 		B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */; };
 		BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */; };
+		BBE9105F20D523D0005D9AC9 /* BestenListeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9105E20D523D0005D9AC9 /* BestenListeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SammelnViewController.swift; sourceTree = "<group>"; };
 		B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldenViewController.swift; sourceTree = "<group>"; };
 		BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
+		BBE9105E20D523D0005D9AC9 /* BestenListeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestenListeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */,
 				B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */,
 				BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */,
+				BBE9105E20D523D0005D9AC9 /* BestenListeTableViewCell.swift */,
 				B0244DD220D472EB009AD30E /* Main.storyboard */,
 				B0244DD820D472ED009AD30E /* Assets.xcassets */,
 				B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */,
 				B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */,
+				BBE9105F20D523D0005D9AC9 /* BestenListeTableViewCell.swift in Sources */,
 				B0244DCF20D472EB009AD30E /* AppDelegate.swift in Sources */,
 				BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */,
 				B0244DD720D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld in Sources */,
