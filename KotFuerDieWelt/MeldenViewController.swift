@@ -21,10 +21,19 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         self.title = "Melden"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        self.view.backgroundColor = .gray
+        let backgroundColor = UIColor(red: (225/255), green: (225/255), blue: (225/255), alpha: 1)
+        self.view.backgroundColor = backgroundColor
+        trashKindSelector = UITableView(frame: CGRect(x: 0, y: 250, width: self.view.bounds.width, height: 250))
+        trashKindSelector.register(UITableViewCell.self, forCellReuseIdentifier: "option")
+        trashKindSelector.dataSource = self
+        trashKindSelector.delegate = self
+        trashKindSelector.isScrollEnabled = false
+        trashKindSelector.rowHeight = 35
+        self.view.addSubview(trashKindSelector)
         
-        trashKindSelector = UITableView(frame: CGRect(x: 0, y: 200, width: self.view.bounds.width, height: 250))
-        setupTableView(tableView: trashKindSelector)
+        let submitBtn = UIBarButtonItem(title: "Submit", style: .done, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = submitBtn
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,20 +42,9 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    func setupTableView(tableView: UITableView){
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "option")
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.isScrollEnabled = false
-        tableView.rowHeight = 35
-        self.view.addSubview(tableView)
-    }
-    
-    
     func adjustTableViewSize(tableView: UITableView){
         var newFrame = tableView.frame
         newFrame.size.height = tableView.contentSize.height
-        print(tableView.contentSize.height)
         tableView.frame = newFrame
     }
     
