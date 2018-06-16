@@ -37,11 +37,11 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func punktestandLabel (punktestand: Int){
-        let punktestandLabel = UILabel(frame: CGRect(x: self.view.bounds.maxX/2, y: (self.navigationController?.navigationBar.bounds.height)! + CGFloat(abstandNavigationBar), width: self.view.bounds.width/2, height: 100))
+        let punktestandLabel = UILabel(frame: CGRect(x: self.view.bounds.width/4, y: (self.navigationController?.navigationBar.bounds.height)! + CGFloat(abstandNavigationBar), width: self.view.bounds.width/2, height: 100))
+        punktestandLabel.textAlignment = .center
         
         punktestandLabel.text = "\(punktestand)"
         punktestandLabel.font = punktestandLabel.font.withSize(80)
-        punktestandLabel.textAlignment = NSTextAlignment.left
         self.view.addSubview(punktestandLabel)
         
     }
@@ -49,7 +49,7 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     func bestenListeTableView() {
         let hoeheNavigationBar = (self.navigationController?.navigationBar.bounds.height)!
         
-        let bestenListeTableView = UITableView(frame: CGRect(x: 0, y: hoeheNavigationBar + hoeheLabel, width: self.view.bounds.width, height: 500))
+        let bestenListeTableView = UITableView(frame: CGRect(x: 0, y: hoeheNavigationBar + hoeheLabel + 10, width: self.view.bounds.width, height: 500))
         bestenListeTableView.delegate = self
         bestenListeTableView.dataSource = self
         bestenListeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "bestenListe")
