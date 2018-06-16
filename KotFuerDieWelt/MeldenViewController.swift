@@ -23,7 +23,7 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         
         let backgroundColor = UIColor(red: (225/255), green: (225/255), blue: (225/255), alpha: 1)
         self.view.backgroundColor = backgroundColor
-        trashKindSelector = UITableView(frame: CGRect(x: 0, y: 250, width: self.view.bounds.width, height: 250))
+        trashKindSelector = UITableView(frame: CGRect(x: 0, y: 300, width: self.view.bounds.width, height: 250))
         trashKindSelector.register(UITableViewCell.self, forCellReuseIdentifier: "option")
         trashKindSelector.dataSource = self
         trashKindSelector.delegate = self
@@ -31,8 +31,25 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         trashKindSelector.rowHeight = 35
         self.view.addSubview(trashKindSelector)
         
-        let submitBtn = UIBarButtonItem(title: "Submit", style: .done, target: self, action: nil)
+        let submitBtn = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(submitTrash))
         self.navigationItem.rightBarButtonItem = submitBtn
+        
+        
+        
+        let overviewView = UIView(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 100))
+        let trashPictureView = UIButton(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
+        let headlineLbl = UILabel(frame: CGRect(x: 100, y: 5, width: self.view.bounds.width - 110, height: 30))
+        let locationLbl = UILabel(frame: CGRect(x: 100, y: 40, width: self.view.bounds.width - 110, height: 30))
+        overviewView.backgroundColor = .white
+        headlineLbl.text = "New Trash"
+        headlineLbl.font = UIFont.boldSystemFont(ofSize: 25)
+        locationLbl.text = "Große Bockenheimer Straße 33, Frankfurt"
+        trashPictureView.backgroundColor = .darkGray
+        overviewView.addSubview(trashPictureView)
+        overviewView.addSubview(headlineLbl)
+        overviewView.addSubview(locationLbl)
+        self.view.addSubview(overviewView)
+        
         
     }
     
@@ -78,5 +95,11 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
 
         
         return cell!
+    }
+    
+    
+    
+    @objc func submitTrash(){
+        
     }
 }
