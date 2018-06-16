@@ -100,9 +100,12 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
     
     //camera
     @objc func activateCamera(sender: UIButton) {
+
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
     
+        // actionSheet for choosing between camera and picture library
+        /*
         let actionSheet = UIAlertController(title: "Foto auswähler", message: "Data", preferredStyle: .alert)
     
         let cameraAlert = UIAlertAction(title: "Kamera", style: .default) { (action) in
@@ -118,9 +121,16 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         }
     
         actionSheet.addAction(cameraAlert)
-        actionSheet.addAction(imageAlert)
+        //actionSheet.addAction(imageAlert)
     
         present(actionSheet, animated: true, completion: nil)
+        
+        imagePickerController.sourceType = .camera
+ */
+        //self.present(imagePickerController, animated: true, completion: nil)
+        
+        imagePickerController.sourceType = .camera
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
