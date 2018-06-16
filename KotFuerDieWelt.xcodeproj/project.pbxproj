@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B0244DCF20D472EB009AD30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0244DCE20D472EB009AD30E /* AppDelegate.swift */; };
-		B0244DD120D472EB009AD30E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0244DD020D472EB009AD30E /* ViewController.swift */; };
 		B0244DD420D472EB009AD30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0244DD220D472EB009AD30E /* Main.storyboard */; };
 		B0244DD720D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0244DD520D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld */; };
 		B0244DD920D472ED009AD30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0244DD820D472ED009AD30E /* Assets.xcassets */; };
 		B0244DDC20D472ED009AD30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */; };
+		B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */; };
+		B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B0244DCB20D472EB009AD30E /* KotFuerDieWelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotFuerDieWelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0244DCE20D472EB009AD30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0244DD020D472EB009AD30E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0244DD320D472EB009AD30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0244DD620D472EB009AD30E /* KotFuerDieWelt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KotFuerDieWelt.xcdatamodel; sourceTree = "<group>"; };
 		B0244DD820D472ED009AD30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0244DDB20D472ED009AD30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0244DDD20D472ED009AD30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SammelnViewController.swift; sourceTree = "<group>"; };
+		B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				B0244DCE20D472EB009AD30E /* AppDelegate.swift */,
-				B0244DD020D472EB009AD30E /* ViewController.swift */,
+				B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */,
+				B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */,
 				B0244DD220D472EB009AD30E /* Main.storyboard */,
 				B0244DD820D472ED009AD30E /* Assets.xcassets */,
 				B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0244DD120D472EB009AD30E /* ViewController.swift in Sources */,
+				B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */,
+				B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */,
 				B0244DCF20D472EB009AD30E /* AppDelegate.swift in Sources */,
 				B0244DD720D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld in Sources */,
 			);
