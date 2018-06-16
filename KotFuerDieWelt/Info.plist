@@ -39,5 +39,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location services are needed for locating the trash can closest to you.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location services are needed for locating the trash can closest to you.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Location services are needed for locating the trash can closest to you.</string>
 </dict>
 </plist>

@@ -18,6 +18,12 @@ class SammelnViewController :UIViewController{
         super.navigationController?.navigationBar.prefersLargeTitles = true
         
         mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        mapView.showsUserLocation = true
+        mapView.setUserTrackingMode(.follow, animated: true)
+        
+        let userLocation = mapView.userLocation.coordinate
+        mapView.setCenter(userLocation, animated: true)
+        mapView.userTrackingMode = .follow
         self.view.addSubview(mapView)
     }
 }
