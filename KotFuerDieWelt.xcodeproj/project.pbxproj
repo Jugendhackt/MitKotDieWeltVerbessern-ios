@@ -12,6 +12,7 @@
 		B0244DD720D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0244DD520D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld */; };
 		B0244DD920D472ED009AD30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0244DD820D472ED009AD30E /* Assets.xcassets */; };
 		B0244DDC20D472ED009AD30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */; };
+		B06E1A5620D56B0F00901D7C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B06E1A5520D56B0E00901D7C /* icon.png */; };
 		B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */; };
 		B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */; };
 		BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */; };
@@ -25,6 +26,7 @@
 		B0244DD820D472ED009AD30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0244DDB20D472ED009AD30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0244DDD20D472ED009AD30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B06E1A5520D56B0E00901D7C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../icon.png; sourceTree = "<group>"; };
 		B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SammelnViewController.swift; sourceTree = "<group>"; };
 		B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldenViewController.swift; sourceTree = "<group>"; };
 		BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */,
 				B0244DD220D472EB009AD30E /* Main.storyboard */,
 				B0244DD820D472ED009AD30E /* Assets.xcassets */,
+				B06E1A5520D56B0E00901D7C /* icon.png */,
 				B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */,
 				B0244DDD20D472ED009AD30E /* Info.plist */,
 				B0244DD520D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld */,
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06E1A5620D56B0F00901D7C /* icon.png in Resources */,
 				B0244DDC20D472ED009AD30E /* LaunchScreen.storyboard in Resources */,
 				B0244DD920D472ED009AD30E /* Assets.xcassets in Resources */,
 				B0244DD420D472EB009AD30E /* Main.storyboard in Resources */,
