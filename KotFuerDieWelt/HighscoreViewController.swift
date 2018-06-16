@@ -49,7 +49,7 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     func bestenListeTableView() {
         let hoeheNavigationBar = (self.navigationController?.navigationBar.bounds.height)!
         
-        let bestenListeTableView = UITableView(frame: CGRect(x: 0, y: hoeheNavigationBar + hoeheLabel, width: self.view.bounds.width, height: 500))
+        let bestenListeTableView = UITableView(frame: CGRect(x: 0, y: hoeheNavigationBar + hoeheLabel + 10, width: self.view.bounds.width, height: 500))
         bestenListeTableView.delegate = self
         bestenListeTableView.dataSource = self
         bestenListeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "bestenListe")
