@@ -21,14 +21,15 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         self.title = "Melden"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        let backgroundColor = UIColor(red: (225/255), green: (225/255), blue: (225/255), alpha: 1)
+        let backgroundColor = UIColor(red: 255/255, green: 218/255, blue: 22/255, alpha: 1.0)
         self.view.backgroundColor = backgroundColor
         trashKindSelector = UITableView(frame: CGRect(x: 0, y: 300, width: self.view.bounds.width, height: 250))
         trashKindSelector.register(UITableViewCell.self, forCellReuseIdentifier: "option")
         trashKindSelector.dataSource = self
         trashKindSelector.delegate = self
         trashKindSelector.isScrollEnabled = false
-        trashKindSelector.rowHeight = 35
+        trashKindSelector.rowHeight = 45
+        trashKindSelector.backgroundColor = UIColor(red: 255/255, green: 231/255, blue: 99/255, alpha: 0.8)
         self.view.addSubview(trashKindSelector)
         
         let submitBtn = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(submitTrash))
@@ -48,6 +49,7 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         overviewView.addSubview(trashPictureView)
         overviewView.addSubview(headlineLbl)
         overviewView.addSubview(locationLbl)
+        overviewView.backgroundColor = UIColor(red: 255/255, green: 231/255, blue: 99/255, alpha: 0.8)
         self.view.addSubview(overviewView)
         
         
@@ -92,7 +94,7 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
             cell?.textLabel?.text = trashKinds[indexPath.row]
         }
         
-
+        cell?.backgroundColor = UIColor(red: 255/255, green: 231/255, blue: 99/255, alpha: 0.8)
         
         return cell!
     }
