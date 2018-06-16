@@ -8,11 +8,12 @@
 
 import UIKit
 
-class HighscoreViewController: UIViewController {
+class HighscoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let abstandNavigationBar = 40
     let hoeheLabel: CGFloat = 120
-    var bestenListeDict = ["Test1": 100, "Test2": 99, "Test3": 98, "Test4": 97, "Test5": 96, "Test6": 95, "Test7": 94]
+    var bestenListeNameArray = ["Test1", "Test2", "Test3", "Test4", "Test5", "Test6", "Test7"]
+    var bestenListePunktestandArray = [100, 99, 98, 97, 96, 95, 94]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,17 +50,20 @@ class HighscoreViewController: UIViewController {
         let hoeheNavigationBar = (self.navigationController?.navigationBar.bounds.height)!
         
         let bestenListeTableView = UITableView(frame: CGRect(x: 0, y: hoeheNavigationBar + hoeheLabel, width: self.view.bounds.width, height: 500))
+        bestenListeTableView.delegate = self
+        bestenListeTableView.dataSource = self
+        bestenListeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "bestenListe")
         
         self.view.addSubview(bestenListeTableView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bestenListeDict.count
+        return bestenListeNameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "option")
-        cell?.textLabel?.text = "\(indexPath.row + 1)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "bestenListe")
+        cell?.textLabel?.text = "\(indexPath.row + 1). \(bestenListeNameArray[indexPath.row]) has \(bestenListePunktestandArray[indexPath.row]) points"
         
         return cell!
     }

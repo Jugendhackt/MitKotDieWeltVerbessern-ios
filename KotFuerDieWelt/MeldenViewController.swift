@@ -30,9 +30,6 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         tableView.isScrollEnabled = false
         self.view.addSubview(tableView)
     }
-    
-    
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
