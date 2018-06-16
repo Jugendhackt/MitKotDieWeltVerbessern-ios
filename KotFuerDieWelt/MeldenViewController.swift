@@ -8,10 +8,11 @@
 
 import UIKit
 
-class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDataSource{
+class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     var trashKindSelector :UITableView!
     let trashKinds = ["sharp-edged", "wet", "feces", "rotten", "multiple pieces"]
+    let trashPictureView = UIButton(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
     
     var selectedTrashAttributes = [false, false, false, false, false]
     
@@ -38,7 +39,6 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         
         
         let overviewView = UIView(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 100))
-        let trashPictureView = UIButton(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
         let headlineLbl = UILabel(frame: CGRect(x: 100, y: 5, width: self.view.bounds.width - 110, height: 30))
         let locationLbl = UILabel(frame: CGRect(x: 100, y: 40, width: self.view.bounds.width - 110, height: 30))
         overviewView.backgroundColor = .white
@@ -46,13 +46,12 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         headlineLbl.font = UIFont.boldSystemFont(ofSize: 25)
         locationLbl.text = "Große Bockenheimer Straße 33, Frankfurt"
         trashPictureView.backgroundColor = .darkGray
+        trashPictureView.addTarget(self, action: #selector(activateCamera(sender:)) , for: .touchUpInside)
         overviewView.addSubview(trashPictureView)
         overviewView.addSubview(headlineLbl)
         overviewView.addSubview(locationLbl)
         overviewView.backgroundColor = UIColor(red: 255/255, green: 231/255, blue: 99/255, alpha: 0.8)
         self.view.addSubview(overviewView)
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,7 +98,38 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         return cell!
     }
     
+    //camera
+    @objc func activateCamera(sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
     
+        let actionSheet = UIAlertController(title: "Foto auswähler", message: "Data", preferredStyle: .alert)
+    
+        let cameraAlert = UIAlertAction(title: "Kamera", style: .default) { (action) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }
+    
+        let imageAlert = UIAlertAction(title: "Foto", style: .default) { (action) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }
+    
+        actionSheet.addAction(cameraAlert)
+        actionSheet.addAction(imageAlert)
+    
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        trashPictureView.setBackgroundImage(image, for: .normal)
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     @objc func submitTrash(){
         
