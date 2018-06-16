@@ -37,11 +37,11 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func punktestandLabel (punktestand: Int){
-        let punktestandLabel = UILabel(frame: CGRect(x: self.view.bounds.maxX/2, y: (self.navigationController?.navigationBar.bounds.height)! + CGFloat(abstandNavigationBar), width: self.view.bounds.width/2, height: 100))
+        let punktestandLabel = UILabel(frame: CGRect(x: self.view.bounds.width/4, y: (self.navigationController?.navigationBar.bounds.height)! + CGFloat(abstandNavigationBar), width: self.view.bounds.width/2, height: 100))
+        punktestandLabel.textAlignment = .center
         
         punktestandLabel.text = "\(punktestand)"
         punktestandLabel.font = punktestandLabel.font.withSize(80)
-        punktestandLabel.textAlignment = NSTextAlignment.left
         self.view.addSubview(punktestandLabel)
         
     }
