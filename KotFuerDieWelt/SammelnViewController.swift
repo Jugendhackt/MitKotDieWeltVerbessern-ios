@@ -20,32 +20,42 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
     //private var trashcans :Array<Data> = []
     
     
+    func addTrashcan(location: CLLocationCoordinate2D){
+        let trashcan = MKPointAnnotation()
+        trashcan.coordinate = location
+        trashcan.title = "Trashcan"
+        
+        self.mapView.addAnnotation(trashcan)
+        self.mapView.selectAnnotation(trashcan, animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         super.title = "Sammeln"
         super.navigationController?.navigationBar.prefersLargeTitles = true
         
-        mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        self.mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
         
         //GPS Authorization
-        locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
-            locationManager.delegate = self as! CLLocationManagerDelegate
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+            self.locationManager.delegate = self as! CLLocationManagerDelegate
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            self.locationManager.startUpdatingLocation()
         }
         
-        //mapView.delegate = self
-        mapView.showsUserLocation = true
-        mapView.setUserTrackingMode(.follow, animated: true)
-        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "loc")
+        self.mapView.delegate = self
+        self.mapView.showsUserLocation = true
+        self.mapView.setUserTrackingMode(.follow, animated: true)
+        self.mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "loc")
 
         
         addTrashcan(location: CLLocationCoordinate2D(latitude: 37.77919, longitude: -122.41914))
         //37.77919 -122.41914
         //latitude: 50.074558, longitude: 8.8686832
         
-        self.view.addSubview(mapView)
+        self.view.addSubview(self.mapView)
         
         //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
         
@@ -60,13 +70,15 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
                 let json = try JSON(trashcansJSON!)
                 let endIndex = json.count
                 for index in 0..<endIndex{
-                    print(json[index]["latitude"].stringValue)
+                    let latitude = Double(json[index]["latitude"].stringValue)
+                    let longitude = Double(json[index]["longitude"].stringValue)
+                    self.addTrashcan(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!))
                 }
             }catch{print("Error!")}
         }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        mapView.showsUserLocation = true
+        self.mapView.showsUserLocation = true
         print("position updated")
         print(locations)
     }
@@ -129,15 +141,6 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
         blurView.removeFromSuperview()
     }
     
-    
-    func addTrashcan(location: CLLocationCoordinate2D){
-        let trashcan = MKPointAnnotation()
-        trashcan.coordinate = location
-        trashcan.title = "Trashcan"
-        
-        self.mapView.addAnnotation(trashcan)
-        self.mapView.selectAnnotation(trashcan, animated: true)
-    }
     
     /*func selectAnnotation(_ annotation: MKAnnotation, animated: Bool) {
         print ("did select Annotation")
