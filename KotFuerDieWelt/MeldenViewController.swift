@@ -18,7 +18,7 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
     var locationLbl: UILabel = UILabel()
     let locationManager = CLLocationManager()
 
-    var locationComplete: String = "Tap to choose add a location"
+    var locationComplete: String = "Tap to add a location"
     
     
     var selectedTrashAttributes = [false, false, false, false, false]
