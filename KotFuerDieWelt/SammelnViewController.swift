@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class SammelnViewController :UIViewController, CLLocationManagerDelegate{
+class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     private var mapView :MKMapView!
     private var popUpView :UIView!
     private var blurView :UIVisualEffectView!
@@ -32,6 +32,9 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate{
         }
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
+        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "loc")
+        
+        addTrashcan(location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832))
         
         
         self.view.addSubview(mapView)
@@ -98,5 +101,29 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate{
         popUpView.removeFromSuperview()
         blurView.removeFromSuperview()
     }
+    
+    
+    func addTrashcan(location: CLLocationCoordinate2D){
+        let trashcan = MKPointAnnotation()
+        trashcan.coordinate = location
+        trashcan.title = "Trashcan"
+        
+        self.mapView.addAnnotation(trashcan)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("Did select Annotation")
+        openPopUp(isTrashcan: true, location: (view.annotation?.coordinate)!, attributes: ["dog friendly"])
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let view = MKAnnotationView.init(annotation: annotation, reuseIdentifier: "loc")
+        view.canShowCallout = true
+        let infoBtn = UIButton(type: .detailDisclosure)
+        view.rightCalloutAccessoryView = infoBtn
+        return view
+    }
+    
     
 }
