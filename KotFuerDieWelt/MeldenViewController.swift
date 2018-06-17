@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate{
     
     var trashKindSelector :UITableView!
     let trashKinds = ["sharp-edged", "wet", "feces", "rotten", "multiple pieces"]
     let trashPictureView = UIButton(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
+    var locationLbl: UILabel = UILabel()
+    let locationManager = CLLocationManager()
+
+    var locationComplete: String = "Tap to add a location"
+    
     
     var selectedTrashAttributes = [false, false, false, false, false]
     
@@ -38,15 +45,16 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         
         
         
-        let overviewView = UIView(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 100))
+        let overviewView = UIButton(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 100))
         let headlineLbl = UILabel(frame: CGRect(x: 100, y: 5, width: self.view.bounds.width - 110, height: 30))
-        let locationLbl = UILabel(frame: CGRect(x: 100, y: 40, width: self.view.bounds.width - 110, height: 30))
+        locationLbl = UILabel(frame: CGRect(x: 100, y: 40, width: self.view.bounds.width - 110, height: 30))
         overviewView.backgroundColor = .white
         headlineLbl.text = "New Trash"
         headlineLbl.font = UIFont.boldSystemFont(ofSize: 25)
-        locationLbl.text = "Große Bockenheimer Straße 33, Frankfurt"
+        locationLbl.text = locationComplete
         trashPictureView.backgroundColor = .darkGray
         trashPictureView.addTarget(self, action: #selector(activateCamera(sender:)) , for: .touchUpInside)
+        overviewView.addTarget(self, action: #selector(getPosition(sender:)), for: .touchUpInside)
         overviewView.addSubview(trashPictureView)
         overviewView.addSubview(headlineLbl)
         overviewView.addSubview(locationLbl)
@@ -118,6 +126,58 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func getPosition(sender: UIButton) {
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
+            
+            if (error != nil) {
+                print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                return
+            }
+            
+            if (placemarks?.count)! > 0 {
+                let pm = placemarks?[0]
+                self.displayLocationInfo(pm)
+                print (self.displayLocationInfo(pm))
+            } else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+    }
+    
+    func displayLocationInfo(_ placemark: CLPlacemark?) {
+        if let containsPlacemark = placemark {
+            //stop updating location to save battery life
+            locationManager.stopUpdatingLocation()
+            let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
+            let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
+            let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
+            let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
+
+            guard let localityUnwrapped = locality else {return}
+            guard let postalCodeUnwrapped = postalCode else {return}
+            guard let administrativeAreaUnwrapped = administrativeArea else {return}
+            guard let countryUnwrapped = country else {return}
+            
+            let fullAddress = "\(localityUnwrapped), \(postalCodeUnwrapped), \(administrativeAreaUnwrapped), \(countryUnwrapped)"
+            
+            locationComplete = fullAddress
+            locationLbl.text = locationComplete
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error while updating location " + error.localizedDescription)
+    }
+
     @objc func submitTrash(){
         
     }
