@@ -30,19 +30,27 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
+        
+        //mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
         mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "loc")
+
         
-        addTrashcan(location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832))
-        
+        addTrashcan(location: CLLocationCoordinate2D(latitude: 37.77919, longitude: -122.41914))
+        //37.77919 -122.41914
+        //latitude: 50.074558, longitude: 8.8686832
         
         self.view.addSubview(mapView)
         
         //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
     }
     
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        mapView.showsUserLocation = true
+        print("position updated")
+        print(locations)
+    }
     
     func openPopUp(isTrashcan: Bool, location: CLLocationCoordinate2D, attributes:Array<String>){
         popUpView = UIView(frame: CGRect(x: self.view.bounds.width/2 - 150, y: self.view.bounds.height/2 - 100, width: 300, height: 200))
@@ -109,13 +117,26 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
         trashcan.title = "Trashcan"
         
         self.mapView.addAnnotation(trashcan)
+        self.mapView.selectAnnotation(trashcan, animated: true)
     }
     
+    /*func selectAnnotation(_ annotation: MKAnnotation, animated: Bool) {
+        print ("did select Annotation")
+    }
+    */
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("Did select Annotation")
         openPopUp(isTrashcan: true, location: (view.annotation?.coordinate)!, attributes: ["dog friendly"])
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("Did select Annotation")
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        print("location updated again")
+        self.mapView.showsUserLocation = true
+    }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let view = MKAnnotationView.init(annotation: annotation, reuseIdentifier: "loc")

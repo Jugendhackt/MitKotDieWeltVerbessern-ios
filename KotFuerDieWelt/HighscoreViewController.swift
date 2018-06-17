@@ -13,7 +13,7 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     var bestenListeTableView :UITableView!
     let abstandNavigationBar = 40
     let hoeheLabel: CGFloat = 120
-    var bestenListeNameArray = ["Test1", "Test2", "Test3", "Test4", "Test5", "Test6", "Test7"]
+    var bestenListeNameArray = ["Hans", "Dieter", "Klaus", "Johannes", "Nils", "Paul", "Anna"]
     var bestenListePunktestandArray = [100, 99, 98, 97, 96, 95, 94]
     var fetchingMore = false
     var items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 11, 12, 13, 14, 15]
@@ -22,12 +22,18 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.view.backgroundColor = UIColor(red: 255/255, green: 218/255, blue: 22/255, alpha: 1.0)
+        //self.view.backgroundColor = UIColor(red: 255/255, green: 218/255, blue: 22/255, alpha: 1.0)
+        punktestandView()
         punkteInfoLabel()
         punktestandLabel(punktestand: 10)
         bestenListeTableViewFunc()
     }
     
+    func punktestandView() {
+        let view = UIView(frame: CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)! + 20, width: self.view.bounds.width, height: 120))
+        view.backgroundColor = UIColor(red: 255/255, green: 218/255, blue: 22/255, alpha: 1.0)
+        self.view.addSubview(view)
+    }
     
     func punkteInfoLabel () {
 
@@ -72,8 +78,8 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bestenListe")
         //cell?.textLabel?.text = "\(indexPath.row + 1). \(bestenListeNameArray[indexPath.row]) has \(bestenListePunktestandArray[indexPath.row]) points"
-        cell?.textLabel?.text = "Item #\(items[indexPath.row])"
-        cell?.backgroundColor = UIColor(red: 255/255, green: 231/255, blue: 99/255, alpha: 0.8)
+        cell?.textLabel?.text = "Player \(items[indexPath.row] + 1)"
+        cell?.backgroundColor = .white
         
         return cell!
     }
