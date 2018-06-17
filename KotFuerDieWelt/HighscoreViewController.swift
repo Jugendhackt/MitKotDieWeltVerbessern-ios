@@ -63,7 +63,8 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
         let hoeheNavigationBar = (self.navigationController?.navigationBar.bounds.height)!
         
         bestenListeTableView = UITableView(frame: CGRect(x: 0, y: hoeheNavigationBar + hoeheLabel + 10, width: self.view.bounds.width, height: 500))
-        bestenListeTableView.backgroundColor = UIColor(red: 255/255, green: 231/255, blue: 99/255, alpha: 0.8)
+        //bestenListeTableView.backgroundColor = UIColor(red: 255/255, green: 231/255, blue: 99/255, alpha: 0.8)
+        bestenListeTableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         bestenListeTableView.delegate = self
         bestenListeTableView.dataSource = self
         bestenListeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "bestenListe")
@@ -78,6 +79,7 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bestenListe")
         //cell?.textLabel?.text = "\(indexPath.row + 1). \(bestenListeNameArray[indexPath.row]) has \(bestenListePunktestandArray[indexPath.row]) points"
+
         cell?.textLabel?.text = "Player \(items[indexPath.row] + 1)"
         cell?.backgroundColor = .white
         
