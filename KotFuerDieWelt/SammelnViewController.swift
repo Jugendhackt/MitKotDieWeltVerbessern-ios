@@ -8,13 +8,15 @@
 
 import UIKit
 import MapKit
+import Alamofire
+import Foundation
 
 class SammelnViewController :UIViewController, CLLocationManagerDelegate{
     private var mapView :MKMapView!
     private var popUpView :UIView!
     private var blurView :UIVisualEffectView!
     private let locationManager = CLLocationManager()
-    private var trashcans :String?
+    //private var trashcans :Array<Data> = []
     
     
     override func viewDidLoad() {
@@ -39,8 +41,17 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate{
         
         //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
         
-        self.trashcans = HTTPClient.shared.get(message: "position=\(mapView.userLocation.coordinate.latitude),\(mapView.userLocation.coordinate.longitude)")
-        print(trashcans)
+        //self.trashcans = HTTPClient.shared.get(message: "50.074558,8.8686832")
+        
+        let message = "50.1043774,8.6758709"
+        let address = "http://151.216.10.34:8080/trashcans"
+        let request = address + "?position=\(message)"
+        print(request)
+        Alamofire.request(request).responseJSON { response in
+            let trashcansJSON = response.result.value
+            let trashcans = self.convertToDictionary(text: trashcansJSON as! String)
+            print(trashcansJSON)
+        }
     }
     
     

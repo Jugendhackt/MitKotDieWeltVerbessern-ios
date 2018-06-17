@@ -6,12 +6,11 @@
 //  Copyright © 2018 Fynn Kiwitt. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 
 class HTTPClient{
     
-    let address = "http://192.168.43.66:8080"
+    let address = "http://151.216.10.34:8080/trashcans"
     
     
     static var shared: HTTPClient{
@@ -22,8 +21,10 @@ class HTTPClient{
     
     
     func get(message: String) -> String?{
-        Alamofire.request(address + "?position\(message)").responseJSON { (response) in
-            return response
+        let request = address + "?position=\(message)"
+        print(request)
+        Alamofire.request(request).responseJSON { response in
+            print(response.data)
         }
         return nil
     }
