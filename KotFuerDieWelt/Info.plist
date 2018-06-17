@@ -47,5 +47,7 @@
 	<string>Location services are needed for locating the trash can closest to you.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Location services are needed for locating the trash can closest to you.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location services are needed for locating the trash you want to report.</string>
 </dict>
 </plist>
