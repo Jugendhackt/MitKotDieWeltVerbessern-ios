@@ -179,6 +179,9 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     @objc func submitTrash(){
-        
+        let alert = UIAlertController(title: "Thanks", message: "Thank you for submitting!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
