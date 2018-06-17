@@ -101,7 +101,7 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     func beginBatchFetch() {
         fetchingMore = true
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             let newItems = (self.items.count...self.items.count + 12).map { index in index }
             self.items.append(contentsOf: newItems)
             self.fetchingMore = false
