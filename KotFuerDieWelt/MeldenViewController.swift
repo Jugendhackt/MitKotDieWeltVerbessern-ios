@@ -104,30 +104,7 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
     
-        // actionSheet for choosing between camera and picture library
-        /*
-        let actionSheet = UIAlertController(title: "Foto auswähler", message: "Data", preferredStyle: .alert)
-    
-        let cameraAlert = UIAlertAction(title: "Kamera", style: .default) { (action) in
-            imagePickerController.sourceType = .camera
-            self.present(imagePickerController, animated: true, completion: nil)
-            
-        }
-    
-        let imageAlert = UIAlertAction(title: "Foto", style: .default) { (action) in
-            imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true, completion: nil)
-            
-        }
-    
-        actionSheet.addAction(cameraAlert)
-        //actionSheet.addAction(imageAlert)
-    
-        present(actionSheet, animated: true, completion: nil)
         
-        imagePickerController.sourceType = .camera
- */
-        //self.present(imagePickerController, animated: true, completion: nil)
         
         imagePickerController.sourceType = .camera
         self.present(imagePickerController, animated: true, completion: nil)
