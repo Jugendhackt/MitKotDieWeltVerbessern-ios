@@ -14,6 +14,7 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate{
     private var popUpView :UIView!
     private var blurView :UIVisualEffectView!
     private let locationManager = CLLocationManager()
+    private var trashcans :String?
     
     
     override func viewDidLoad() {
@@ -37,6 +38,9 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate{
         self.view.addSubview(mapView)
         
         //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
+        
+        self.trashcans = HTTPClient.shared.get(message: "position=\(mapView.userLocation.coordinate.latitude),\(mapView.userLocation.coordinate.longitude)")
+        print(trashcans)
     }
     
     

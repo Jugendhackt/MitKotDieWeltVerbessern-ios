@@ -13,12 +13,15 @@
 		B0244DD920D472ED009AD30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0244DD820D472ED009AD30E /* Assets.xcassets */; };
 		B0244DDC20D472ED009AD30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */; };
 		B06E1A6020D5B3D700901D7C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B06E1A5F20D5B3D700901D7C /* icon.png */; };
+		B0E5196520D5BF0000A70E5E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E5196420D5BF0000A70E5E /* HTTPClient.swift */; };
 		B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */; };
 		B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */; };
+		B1F1732973E143F1087D48D5 /* Pods_KotFuerDieWelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDD732151A2D52BDE0F5F9E /* Pods_KotFuerDieWelt.framework */; };
 		BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		379F0E3C7151157E5391DE3F /* Pods-KotFuerDieWelt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotFuerDieWelt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KotFuerDieWelt/Pods-KotFuerDieWelt.debug.xcconfig"; sourceTree = "<group>"; };
 		B0244DCB20D472EB009AD30E /* KotFuerDieWelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotFuerDieWelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0244DCE20D472EB009AD30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0244DD320D472EB009AD30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -27,9 +30,12 @@
 		B0244DDB20D472ED009AD30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0244DDD20D472ED009AD30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06E1A5F20D5B3D700901D7C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B0E5196420D5BF0000A70E5E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SammelnViewController.swift; sourceTree = "<group>"; };
 		B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldenViewController.swift; sourceTree = "<group>"; };
 		BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
+		DCDD732151A2D52BDE0F5F9E /* Pods_KotFuerDieWelt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KotFuerDieWelt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB6582A3005882920111F3B3 /* Pods-KotFuerDieWelt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotFuerDieWelt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KotFuerDieWelt/Pods-KotFuerDieWelt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F1732973E143F1087D48D5 /* Pods_KotFuerDieWelt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		573D861199CD19BDDB537CC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				379F0E3C7151157E5391DE3F /* Pods-KotFuerDieWelt.debug.xcconfig */,
+				EB6582A3005882920111F3B3 /* Pods-KotFuerDieWelt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B0244DC220D472EA009AD30E = {
 			isa = PBXGroup;
 			children = (
 				B0244DCD20D472EB009AD30E /* KotFuerDieWelt */,
 				B0244DCC20D472EB009AD30E /* Products */,
+				573D861199CD19BDDB537CC6 /* Pods */,
+				CBF179193950490FC4F892E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +84,7 @@
 				B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */,
 				B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */,
 				BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */,
+				B0E5196420D5BF0000A70E5E /* HTTPClient.swift */,
 				B0244DD220D472EB009AD30E /* Main.storyboard */,
 				B0244DD820D472ED009AD30E /* Assets.xcassets */,
 				B06E1A5F20D5B3D700901D7C /* icon.png */,
@@ -76,6 +95,14 @@
 			path = KotFuerDieWelt;
 			sourceTree = "<group>";
 		};
+		CBF179193950490FC4F892E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCDD732151A2D52BDE0F5F9E /* Pods_KotFuerDieWelt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0244DE020D472ED009AD30E /* Build configuration list for PBXNativeTarget "KotFuerDieWelt" */;
 			buildPhases = (
+				473FA36792FE9E7EA116960F /* [CP] Check Pods Manifest.lock */,
 				B0244DC720D472EB009AD30E /* Sources */,
 				B0244DC820D472EB009AD30E /* Frameworks */,
 				B0244DC920D472EB009AD30E /* Resources */,
+				97EE2394025D835E8D0631CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,6 +172,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		473FA36792FE9E7EA116960F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KotFuerDieWelt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97EE2394025D835E8D0631CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KotFuerDieWelt/Pods-KotFuerDieWelt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KotFuerDieWelt/Pods-KotFuerDieWelt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0244DC720D472EB009AD30E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -150,6 +218,7 @@
 			files = (
 				B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */,
 				B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */,
+				B0E5196520D5BF0000A70E5E /* HTTPClient.swift in Sources */,
 				B0244DCF20D472EB009AD30E /* AppDelegate.swift in Sources */,
 				BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */,
 				B0244DD720D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld in Sources */,
@@ -294,6 +363,7 @@
 		};
 		B0244DE120D472ED009AD30E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 379F0E3C7151157E5391DE3F /* Pods-KotFuerDieWelt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,6 +383,7 @@
 		};
 		B0244DE220D472ED009AD30E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB6582A3005882920111F3B3 /* Pods-KotFuerDieWelt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
