@@ -8,12 +8,16 @@
 
 import UIKit
 import MapKit
+import Alamofire
+import Foundation
+import SwiftyJSON
 
 class SammelnViewController :UIViewController, CLLocationManagerDelegate{
     private var mapView :MKMapView!
     private var popUpView :UIView!
     private var blurView :UIVisualEffectView!
     private let locationManager = CLLocationManager()
+    //private var trashcans :Array<Data> = []
     
     
     override func viewDidLoad() {
@@ -37,7 +41,22 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate{
         self.view.addSubview(mapView)
         
         //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
-    }
+        
+        
+        let message = "50.1043774,8.6758709"
+        let address = "http://151.216.10.34:8080/trashcans"
+        let request = address + "?position=\(message)"
+        print(request)
+        Alamofire.request(request).responseJSON { response in
+            let trashcansJSON = response.result.value
+            do{
+                let json = try JSON(trashcansJSON!)
+                let endIndex = json.count
+                for index in 0..<endIndex{
+                    print(json[index]["latitude"].stringValue)
+                }
+            }catch{print("Error!")}
+        }
     
     
     
@@ -99,4 +118,6 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate{
         blurView.removeFromSuperview()
     }
     
+}
+
 }
