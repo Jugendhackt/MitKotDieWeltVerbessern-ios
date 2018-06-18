@@ -13,7 +13,7 @@ class HighscoreViewController: UIViewController, UITableViewDelegate, UITableVie
     var bestenListeTableView :UITableView!
     let abstandNavigationBar = 40
     let hoeheLabel: CGFloat = 120
-    var bestenListeNameArray = ["Hans", "Dieter", "Klaus", "Johannes", "Nils", "Paul", "Anna"]
+    var bestenListeNameArray = ["Hans", "Dieter", "Klaus", "Johannes", "Nils", "Paul", "Anna"] //**räusper** DIVERSITY!!! **räusper** ;)
     var bestenListePunktestandArray = [100, 99, 98, 97, 96, 95, 94]
     var fetchingMore = false
     var items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 8, 10, 11, 12, 13, 14, 15]

@@ -52,16 +52,15 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
 
         
         addTrashcan(location: CLLocationCoordinate2D(latitude: 37.77919, longitude: -122.41914))
-        //37.77919 -122.41914
-        //latitude: 50.074558, longitude: 8.8686832
         
         self.view.addSubview(self.mapView)
         
         //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
         
-        
-        let message = "50.1043774,8.6758709"
-        let address = "http://151.216.10.34:8080/trashcans"
+        let userLocation = self.mapView.userLocation.coordinate
+        //let message = "50.1043774,8.6758709"
+        let message = "\(userLocation.latitude),\(userLocation.longitude)"
+        let address = "https://kfdw.herokuapp.com/trashcans"
         let request = address + "?position=\(message)"
         print(request)
         Alamofire.request(request).responseJSON { response in
