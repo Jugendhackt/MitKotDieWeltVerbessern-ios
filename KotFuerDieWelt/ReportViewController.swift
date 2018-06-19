@@ -10,8 +10,9 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate{
+class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate, UITextViewDelegate{
     
+    var scrollView :UIScrollView!
     var trashKindSelector :UITableView!
     let trashKinds = ["sharp-edged", "wet", "feces", "rotten", "multiple pieces"]
     let trashPictureView = UIButton(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
@@ -29,23 +30,31 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         self.title = "Report"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        self.scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        self.scrollView.contentSize = CGSize(width: self.view.bounds.width, height: 1000)
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.isScrollEnabled = true
+        scrollView.isUserInteractionEnabled = true
+        self.view.addSubview(scrollView)
+        
+        
         let backgroundColor = UIColor(red: (225/255), green: (225/255), blue: (225/255), alpha: 1)
         self.view.backgroundColor = backgroundColor
-        trashKindSelector = UITableView(frame: CGRect(x: 0, y: 300, width: self.view.bounds.width, height: 250))
+        trashKindSelector = UITableView(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 250))
         trashKindSelector.register(UITableViewCell.self, forCellReuseIdentifier: "option")
         trashKindSelector.dataSource = self
         trashKindSelector.delegate = self
         trashKindSelector.isScrollEnabled = false
         trashKindSelector.rowHeight = 45
         trashKindSelector.backgroundColor = .white
-        self.view.addSubview(trashKindSelector)
+        self.scrollView.addSubview(trashKindSelector)
         
         let submitBtn = UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(submitTrash))
         self.navigationItem.rightBarButtonItem = submitBtn
         
         
         
-        let overviewView = UIButton(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 100))
+        let overviewView = UIButton(frame: CGRect(x: 0, y: 10, width: self.view.bounds.width, height: 100))
         let headlineLbl = UILabel(frame: CGRect(x: 100, y: 5, width: self.view.bounds.width - 110, height: 30))
         locationLbl = UITextView(frame: CGRect(x: 100, y: 40, width: self.view.bounds.width - 110, height: 60))
         locationLbl.textContainerInset = UIEdgeInsets.zero
@@ -63,7 +72,37 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         overviewView.addSubview(headlineLbl)
         overviewView.addSubview(locationLbl)
         overviewView.backgroundColor = .white
-        self.view.addSubview(overviewView)
+        self.scrollView.addSubview(overviewView)
+        
+        
+        let commentText = UITextView(frame: CGRect(x: 0, y: 420, width: self.view.bounds.width, height: 75))
+        commentText.isUserInteractionEnabled = true
+        commentText.text = "Comment(optional)"
+        commentText.textColor = .lightGray
+        commentText.font = UIFont.systemFont(ofSize: 15)
+        commentText.autocorrectionType = .yes
+        commentText.autocapitalizationType = .sentences
+        commentText.backgroundColor = .white
+        scrollView.delegate = self
+        self.scrollView.addSubview(commentText)
+    }
+    
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        print("function executed")
+        print("Color: \(textView.textColor)")
+        if textView.textColor == .lightGray {
+            print("lightGray")
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty{
+            textView.text = "Comment(optional)"
+            textView.textColor = .lightGray
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
