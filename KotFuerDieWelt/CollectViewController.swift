@@ -40,12 +40,12 @@ class CollectViewController :UIViewController, CLLocationManagerDelegate, MKMapV
         //GPS Authorization
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
-            self.locationManager.delegate = self as CLLocationManagerDelegate
+            self.locationManager.delegate = self
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
             self.locationManager.startUpdatingLocation()
         }
         
-        self.mapView.delegate = self as MKMapViewDelegate
+        self.mapView.delegate = self
         self.mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(.follow, animated: true)
         self.mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "loc")
@@ -61,17 +61,20 @@ class CollectViewController :UIViewController, CLLocationManagerDelegate, MKMapV
         let address = "https://kfdw.herokuapp.com/trashcans"
         let request = address + "?position=\(message)"
         print(request)
-        Alamofire.request(request).responseJSON { response in
-            let trashcansJSON = response.result.value
-            let json = JSON(trashcansJSON!)
-            let endIndex = json.count
+        do{
+            var trashcansJSON :Any?
+            Alamofire.request(request).responseJSON { response in
+                trashcansJSON = response.result.value
+                }
+            let json = JSON(trashcansJSON ?? "[]")
+            let endIndex =  json.count
             for index in 0..<endIndex{
                 let latitude = Double(json[index]["latitude"].stringValue)
                 let longitude = Double(json[index]["longitude"].stringValue)
                 self.addTrashcan(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!))
             }
+
         }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.mapView.showsUserLocation = true
         print("position updated")
@@ -137,10 +140,10 @@ class CollectViewController :UIViewController, CLLocationManagerDelegate, MKMapV
     }
     
     
-    /*func selectAnnotation(_ annotation: MKAnnotation, animated: Bool) {
+    func selectAnnotation(_ annotation: MKAnnotation, animated: Bool) {
         print ("did select Annotation")
     }
-    */
+ 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("Did select Annotation")
         openPopUp(isTrashcan: true, location: (view.annotation?.coordinate)!, attributes: ["dog friendly"])

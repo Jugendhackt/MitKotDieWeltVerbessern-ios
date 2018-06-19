@@ -15,7 +15,7 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
     var trashKindSelector :UITableView!
     let trashKinds = ["sharp-edged", "wet", "feces", "rotten", "multiple pieces"]
     let trashPictureView = UIButton(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
-    var locationLbl: UILabel = UILabel()
+    var locationLbl: UITextView = UITextView()
     let locationManager = CLLocationManager()
 
     var locationComplete: String = "Tap to add a location"
@@ -47,7 +47,11 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         
         let overviewView = UIButton(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 100))
         let headlineLbl = UILabel(frame: CGRect(x: 100, y: 5, width: self.view.bounds.width - 110, height: 30))
-        locationLbl = UILabel(frame: CGRect(x: 100, y: 40, width: self.view.bounds.width - 110, height: 30))
+        locationLbl = UITextView(frame: CGRect(x: 100, y: 40, width: self.view.bounds.width - 110, height: 60))
+        locationLbl.textContainerInset = UIEdgeInsets.zero
+        locationLbl.textContainer.lineFragmentPadding = 0
+        locationLbl.font = UIFont.systemFont(ofSize: 15)
+        locationLbl.isUserInteractionEnabled = false
         overviewView.backgroundColor = .white
         headlineLbl.text = "New Trash"
         headlineLbl.font = UIFont.boldSystemFont(ofSize: 25)
@@ -111,9 +115,6 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
 
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-    
-        
-        
         imagePickerController.sourceType = .camera
         self.present(imagePickerController, animated: true, completion: nil)
     }
@@ -127,12 +128,10 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func getPosition(sender: UIButton) {
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -157,17 +156,15 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         if let containsPlacemark = placemark {
             //stop updating location to save battery life
             locationManager.stopUpdatingLocation()
-            let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
-            let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
-            let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
-            let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
-
-            guard let localityUnwrapped = locality else {return}
-            guard let postalCodeUnwrapped = postalCode else {return}
-            guard let administrativeAreaUnwrapped = administrativeArea else {return}
-            guard let countryUnwrapped = country else {return}
             
-            let fullAddress = "\(localityUnwrapped), \(postalCodeUnwrapped), \(administrativeAreaUnwrapped), \(countryUnwrapped)"
+            let street = containsPlacemark.thoroughfare ?? ""
+            let number = containsPlacemark.subThoroughfare ?? ""
+            let city = containsPlacemark.locality ?? ""
+            let postalCode = containsPlacemark.postalCode ?? ""
+            let state = containsPlacemark.administrativeArea ?? ""
+            let country = containsPlacemark.country ?? ""
+            
+            let fullAddress = "\(street) \(number), \(city) \(postalCode), \(state), \(country)"
             
             locationComplete = fullAddress
             locationLbl.text = locationComplete
