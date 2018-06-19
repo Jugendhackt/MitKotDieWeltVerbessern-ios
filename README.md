@@ -1,6 +1,6 @@
 # Mit Kot die Welt verbessern - iOS App
 ## Project Overview
-Our goal is to clean up cities together as a community. This doesn't just look great, it also helps the environment.w
+Our goal is to clean up cities together as a community. This doesn't just look great, it also helps the environment.
 
 ## App Features
 #### 1. Locate the trashcan next to you
