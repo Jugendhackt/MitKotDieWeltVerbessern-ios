@@ -10,4 +10,4 @@ Making your city cleaner starts with you properly disposing your trash. In Order
 Have you seen any litter lying around on the street? You can now report it! If you report trash a very engaged community member might be volunteering for cleaning. We are also working on colaborating with public utility so they now excatly where trash is.
 
 #### 3. Help keeping your city clean
-If you want to contribute to your local communtiy as well it has never been easier. Just use our app to locate trash in your city and help to remove it great, it also helps the environment.
+If you want to contribute to your local communtiy as well it has never been easier. Just use our app to locate trash in your city and help to remove it great, it also helps the environment. We are also offering a highscore list to celebrate all local heros!
