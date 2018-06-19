@@ -24,3 +24,7 @@ We also have a progressive web app. Check it out here: https://github.com/Jugend
 
 ## Backend
 Our server backend is developed by @jens1o: https://github.com/Jugendhackt/mcdwv-backend
+
+
+### Wanna help?
+If you are interested in helping us with our projected, we'd love you to support the OpenStreetMap community by mapping new trashcans in your town. This will allow us to enlarge our trashcan database and your city will be even cleaner.
