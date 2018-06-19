@@ -12,7 +12,7 @@ import Alamofire
 import Foundation
 import SwiftyJSON
 
-class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
+class CollectViewController :UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     private var mapView :MKMapView!
     private var popUpView :UIView!
     private var blurView :UIVisualEffectView!
@@ -32,7 +32,7 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.title = "Sammeln"
+        super.title = "Collect"
         super.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
@@ -40,12 +40,12 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
         //GPS Authorization
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
-            self.locationManager.delegate = self as! CLLocationManagerDelegate
+            self.locationManager.delegate = self as CLLocationManagerDelegate
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
             self.locationManager.startUpdatingLocation()
         }
         
-        self.mapView.delegate = self
+        self.mapView.delegate = self as MKMapViewDelegate
         self.mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(.follow, animated: true)
         self.mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "loc")
@@ -55,25 +55,21 @@ class SammelnViewController :UIViewController, CLLocationManagerDelegate, MKMapV
         
         self.view.addSubview(self.mapView)
         
-        //openPopUp(isTrashcan: true, location: CLLocationCoordinate2D(latitude: 50.074558, longitude: 8.8686832), attributes: ["dog firendly"])
-        
         let userLocation = self.mapView.userLocation.coordinate
-        //let message = "50.1043774,8.6758709"
-        let message = "\(userLocation.latitude),\(userLocation.longitude)"
+        let message = "50.1043774,8.6758709"
+        //let message = "\(userLocation.latitude),\(userLocation.longitude)"
         let address = "https://kfdw.herokuapp.com/trashcans"
         let request = address + "?position=\(message)"
         print(request)
         Alamofire.request(request).responseJSON { response in
             let trashcansJSON = response.result.value
-            do{
-                let json = try JSON(trashcansJSON!)
-                let endIndex = json.count
-                for index in 0..<endIndex{
-                    let latitude = Double(json[index]["latitude"].stringValue)
-                    let longitude = Double(json[index]["longitude"].stringValue)
-                    self.addTrashcan(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!))
-                }
-            }catch{print("Error!")}
+            let json = JSON(trashcansJSON!)
+            let endIndex = json.count
+            for index in 0..<endIndex{
+                let latitude = Double(json[index]["latitude"].stringValue)
+                let longitude = Double(json[index]["longitude"].stringValue)
+                self.addTrashcan(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!))
+            }
         }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

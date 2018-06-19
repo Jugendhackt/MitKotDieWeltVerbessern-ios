@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate{
+class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate{
     
     var trashKindSelector :UITableView!
     let trashKinds = ["sharp-edged", "wet", "feces", "rotten", "multiple pieces"]
@@ -26,7 +26,7 @@ class MeldenViewController :UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Melden"
+        self.title = "Report"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         let backgroundColor = UIColor(red: (225/255), green: (225/255), blue: (225/255), alpha: 1)

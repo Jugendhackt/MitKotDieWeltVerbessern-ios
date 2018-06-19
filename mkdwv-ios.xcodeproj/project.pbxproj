@@ -12,25 +12,25 @@
 		B0244DD720D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0244DD520D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld */; };
 		B0244DD920D472ED009AD30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0244DD820D472ED009AD30E /* Assets.xcassets */; };
 		B0244DDC20D472ED009AD30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */; };
+		B033DAA620D9328A00558365 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033DAA520D9328900558365 /* ReportViewController.swift */; };
+		B033DAA820D932FE00558365 /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033DAA720D932FD00558365 /* CollectViewController.swift */; };
 		B06E1A6020D5B3D700901D7C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B06E1A5F20D5B3D700901D7C /* icon.png */; };
-		B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */; };
-		B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */; };
 		B1F1732973E143F1087D48D5 /* Pods_KotFuerDieWelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDD732151A2D52BDE0F5F9E /* Pods_KotFuerDieWelt.framework */; };
 		BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		379F0E3C7151157E5391DE3F /* Pods-KotFuerDieWelt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotFuerDieWelt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KotFuerDieWelt/Pods-KotFuerDieWelt.debug.xcconfig"; sourceTree = "<group>"; };
-		B0244DCB20D472EB009AD30E /* KotFuerDieWelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotFuerDieWelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0244DCB20D472EB009AD30E /* mkdwv-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mkdwv-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0244DCE20D472EB009AD30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0244DD320D472EB009AD30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0244DD620D472EB009AD30E /* KotFuerDieWelt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KotFuerDieWelt.xcdatamodel; sourceTree = "<group>"; };
 		B0244DD820D472ED009AD30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0244DDB20D472ED009AD30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0244DDD20D472ED009AD30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B033DAA520D9328900558365 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		B033DAA720D932FD00558365 /* CollectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
 		B06E1A5F20D5B3D700901D7C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SammelnViewController.swift; sourceTree = "<group>"; };
-		B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldenViewController.swift; sourceTree = "<group>"; };
 		BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
 		DCDD732151A2D52BDE0F5F9E /* Pods_KotFuerDieWelt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KotFuerDieWelt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6582A3005882920111F3B3 /* Pods-KotFuerDieWelt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotFuerDieWelt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KotFuerDieWelt/Pods-KotFuerDieWelt.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		B0244DCC20D472EB009AD30E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0244DCB20D472EB009AD30E /* KotFuerDieWelt.app */,
+				B0244DCB20D472EB009AD30E /* mkdwv-ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,8 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				B0244DCE20D472EB009AD30E /* AppDelegate.swift */,
-				B0FC99B720D4E2FA009E9920 /* SammelnViewController.swift */,
-				B0FC99B920D4E5E4009E9920 /* MeldenViewController.swift */,
+				B033DAA720D932FD00558365 /* CollectViewController.swift */,
+				B033DAA520D9328900558365 /* ReportViewController.swift */,
 				BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */,
 				B0244DD220D472EB009AD30E /* Main.storyboard */,
 				B0244DD820D472ED009AD30E /* Assets.xcassets */,
@@ -103,9 +103,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B0244DCA20D472EB009AD30E /* KotFuerDieWelt */ = {
+		B0244DCA20D472EB009AD30E /* mkdwv-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0244DE020D472ED009AD30E /* Build configuration list for PBXNativeTarget "KotFuerDieWelt" */;
+			buildConfigurationList = B0244DE020D472ED009AD30E /* Build configuration list for PBXNativeTarget "mkdwv-ios" */;
 			buildPhases = (
 				473FA36792FE9E7EA116960F /* [CP] Check Pods Manifest.lock */,
 				B0244DC720D472EB009AD30E /* Sources */,
@@ -117,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = KotFuerDieWelt;
+			name = "mkdwv-ios";
 			productName = KotFuerDieWelt;
-			productReference = B0244DCB20D472EB009AD30E /* KotFuerDieWelt.app */;
+			productReference = B0244DCB20D472EB009AD30E /* mkdwv-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +137,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0244DC620D472EA009AD30E /* Build configuration list for PBXProject "KotFuerDieWelt" */;
+			buildConfigurationList = B0244DC620D472EA009AD30E /* Build configuration list for PBXProject "mkdwv-ios" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -150,7 +150,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0244DCA20D472EB009AD30E /* KotFuerDieWelt */,
+				B0244DCA20D472EB009AD30E /* mkdwv-ios */,
 			);
 		};
 /* End PBXProject section */
@@ -215,10 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0FC99B820D4E2FA009E9920 /* SammelnViewController.swift in Sources */,
-				B0FC99BA20D4E5E4009E9920 /* MeldenViewController.swift in Sources */,
 				B0244DCF20D472EB009AD30E /* AppDelegate.swift in Sources */,
+				B033DAA820D932FE00558365 /* CollectViewController.swift in Sources */,
 				BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */,
+				B033DAA620D9328A00558365 /* ReportViewController.swift in Sources */,
 				B0244DD720D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,7 +402,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0244DC620D472EA009AD30E /* Build configuration list for PBXProject "KotFuerDieWelt" */ = {
+		B0244DC620D472EA009AD30E /* Build configuration list for PBXProject "mkdwv-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0244DDE20D472ED009AD30E /* Debug */,
@@ -411,7 +411,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0244DE020D472ED009AD30E /* Build configuration list for PBXNativeTarget "KotFuerDieWelt" */ = {
+		B0244DE020D472ED009AD30E /* Build configuration list for PBXNativeTarget "mkdwv-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0244DE120D472ED009AD30E /* Debug */,
