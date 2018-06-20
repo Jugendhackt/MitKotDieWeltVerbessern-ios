@@ -1,5 +1,5 @@
 //
-//  MeldenViewController.swift
+//  ReportViewController.swift
 //  KotFuerDieWelt
 //
 //  Created by Fynn Kiwitt on 16.06.18.
@@ -151,11 +151,36 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
     
     //camera
     @objc func activateCamera(sender: UIButton) {
-
+        //normal usage (only camera)
+        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .camera
         self.present(imagePickerController, animated: true, completion: nil)
+ 
+        /*
+        //debugging (simulator)
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        let actionSheet = UIAlertController(title: "Foto auswähler", message: "Data", preferredStyle: .actionSheet)
+        
+        let cameraAlert = UIAlertAction(title: "Kamera", style: .default) { (action) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }
+        
+        let imageAlert = UIAlertAction(title: "Foto", style: .default) { (action) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }
+        
+        actionSheet.addAction(cameraAlert)
+        actionSheet.addAction(imageAlert)
+        
+        present(actionSheet, animated: true, completion: nil)
+ */
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -218,6 +243,13 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         let alert = UIAlertController(title: "Thanks", message: "Thank you for submitting!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
             //reset
+            //reset the positionfield and remove the picture
+            self.trashPictureView.setBackgroundImage(nil, for: .normal)
+            self.locationComplete = "Tap to add a location"
+            self.locationLbl.text = self.locationComplete
+            //reset the tableview
+            
+            
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
