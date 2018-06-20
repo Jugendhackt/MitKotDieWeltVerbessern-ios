@@ -152,13 +152,13 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
     //camera
     @objc func activateCamera(sender: UIButton) {
         //normal usage (only camera)
-        
+        /*
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .camera
         self.present(imagePickerController, animated: true, completion: nil)
- 
-        /*
+        */
+        
         //debugging (simulator)
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -180,7 +180,6 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         actionSheet.addAction(imageAlert)
         
         present(actionSheet, animated: true, completion: nil)
- */
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -248,8 +247,16 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
             self.locationComplete = "Tap to add a location"
             self.locationLbl.text = self.locationComplete
             //reset the tableview
-            
-            
+            self.trashKindSelector.removeFromSuperview()
+            self.trashKindSelector = UITableView(frame: CGRect(x: 0, y: 150, width: self.view.bounds.width, height: 250))
+            self.trashKindSelector.register(UITableViewCell.self, forCellReuseIdentifier: "option")
+            self.trashKindSelector.dataSource = self
+            self.trashKindSelector.delegate = self
+            self.trashKindSelector.isScrollEnabled = false
+            self.trashKindSelector.rowHeight = 45
+            self.trashKindSelector.backgroundColor = .white
+            self.scrollView.addSubview(self.trashKindSelector)
+            self.adjustTableViewSize(tableView: self.trashKindSelector)
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
