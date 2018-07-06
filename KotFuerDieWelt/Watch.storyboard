@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="I0O-2s-HYY">
+            <objects>
+                <controller id="uSA-pq-Dap">
+                    <items>
+                        <label width="121" height="48" alignment="left" text="hello, watch!" id="zm0-JO-FCq"/>
+                    </items>
+                    <menu key="menu" id="hoC-GA-48r">
+                        <items>
+                            <menuItem title="Menu Item" id="rIS-oj-vba"/>
+                        </items>
+                    </menu>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-36" y="8"/>
+        </scene>
+    </scenes>
+</document>

@@ -14,10 +14,60 @@
 		B0244DDC20D472ED009AD30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0244DDA20D472ED009AD30E /* LaunchScreen.storyboard */; };
 		B033DAA620D9328A00558365 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033DAA520D9328900558365 /* ReportViewController.swift */; };
 		B033DAA820D932FE00558365 /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033DAA720D932FD00558365 /* CollectViewController.swift */; };
+		B04350D120EFAF5800ADD889 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B04350CF20EFAF5800ADD889 /* Interface.storyboard */; };
+		B04350D320EFAF5C00ADD889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04350D220EFAF5C00ADD889 /* Assets.xcassets */; };
+		B04350DA20EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B04350D920EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B04350DF20EFAF5D00ADD889 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04350DE20EFAF5C00ADD889 /* InterfaceController.swift */; };
+		B04350E120EFAF5D00ADD889 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04350E020EFAF5D00ADD889 /* ExtensionDelegate.swift */; };
+		B04350E320EFAF5D00ADD889 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04350E220EFAF5D00ADD889 /* NotificationController.swift */; };
+		B04350E520EFAF5D00ADD889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04350E420EFAF5D00ADD889 /* Assets.xcassets */; };
+		B04350EA20EFAF5D00ADD889 /* MitKotDieWeltVerbesern.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B04350CD20EFAF5800ADD889 /* MitKotDieWeltVerbesern.app */; };
 		B06E1A6020D5B3D700901D7C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B06E1A5F20D5B3D700901D7C /* icon.png */; };
 		B1F1732973E143F1087D48D5 /* Pods_KotFuerDieWelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCDD732151A2D52BDE0F5F9E /* Pods_KotFuerDieWelt.framework */; };
 		BBE9105D20D50C48005D9AC9 /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B04350DB20EFAF5C00ADD889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0244DC320D472EA009AD30E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B04350D820EFAF5C00ADD889;
+			remoteInfo = "MitKotDieWeltVerbesern Extension";
+		};
+		B04350E820EFAF5D00ADD889 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0244DC320D472EA009AD30E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B04350CC20EFAF5800ADD889;
+			remoteInfo = MitKotDieWeltVerbesern;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B04350EE20EFAF5D00ADD889 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B04350DA20EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B04350F220EFAF5D00ADD889 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B04350EA20EFAF5D00ADD889 /* MitKotDieWeltVerbesern.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		379F0E3C7151157E5391DE3F /* Pods-KotFuerDieWelt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KotFuerDieWelt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KotFuerDieWelt/Pods-KotFuerDieWelt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -30,6 +80,17 @@
 		B0244DDD20D472ED009AD30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B033DAA520D9328900558365 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		B033DAA720D932FD00558365 /* CollectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
+		B04350CD20EFAF5800ADD889 /* MitKotDieWeltVerbesern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MitKotDieWeltVerbesern.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04350D020EFAF5800ADD889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B04350D220EFAF5C00ADD889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B04350D420EFAF5C00ADD889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B04350D920EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MitKotDieWeltVerbesern Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04350DE20EFAF5C00ADD889 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B04350E020EFAF5D00ADD889 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B04350E220EFAF5D00ADD889 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B04350E420EFAF5D00ADD889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B04350E620EFAF5D00ADD889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B04350E720EFAF5D00ADD889 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		B06E1A5F20D5B3D700901D7C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		BBE9105C20D50C48005D9AC9 /* HighscoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
 		DCDD732151A2D52BDE0F5F9E /* Pods_KotFuerDieWelt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KotFuerDieWelt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +103,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1F1732973E143F1087D48D5 /* Pods_KotFuerDieWelt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B04350D620EFAF5C00ADD889 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				B0244DCD20D472EB009AD30E /* KotFuerDieWelt */,
+				B04350CE20EFAF5800ADD889 /* MitKotDieWeltVerbesern */,
+				B04350DD20EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension */,
 				B0244DCC20D472EB009AD30E /* Products */,
 				573D861199CD19BDDB537CC6 /* Pods */,
 				CBF179193950490FC4F892E6 /* Frameworks */,
@@ -71,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				B0244DCB20D472EB009AD30E /* mkdwv-ios.app */,
+				B04350CD20EFAF5800ADD889 /* MitKotDieWeltVerbesern.app */,
+				B04350D920EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +162,29 @@
 				B0244DD520D472EB009AD30E /* KotFuerDieWelt.xcdatamodeld */,
 			);
 			path = KotFuerDieWelt;
+			sourceTree = "<group>";
+		};
+		B04350CE20EFAF5800ADD889 /* MitKotDieWeltVerbesern */ = {
+			isa = PBXGroup;
+			children = (
+				B04350CF20EFAF5800ADD889 /* Interface.storyboard */,
+				B04350D220EFAF5C00ADD889 /* Assets.xcassets */,
+				B04350D420EFAF5C00ADD889 /* Info.plist */,
+			);
+			path = MitKotDieWeltVerbesern;
+			sourceTree = "<group>";
+		};
+		B04350DD20EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B04350DE20EFAF5C00ADD889 /* InterfaceController.swift */,
+				B04350E020EFAF5D00ADD889 /* ExtensionDelegate.swift */,
+				B04350E220EFAF5D00ADD889 /* NotificationController.swift */,
+				B04350E420EFAF5D00ADD889 /* Assets.xcassets */,
+				B04350E620EFAF5D00ADD889 /* Info.plist */,
+				B04350E720EFAF5D00ADD889 /* PushNotificationPayload.apns */,
+			);
+			path = "MitKotDieWeltVerbesern Extension";
 			sourceTree = "<group>";
 		};
 		CBF179193950490FC4F892E6 /* Frameworks */ = {
@@ -112,15 +207,51 @@
 				B0244DC820D472EB009AD30E /* Frameworks */,
 				B0244DC920D472EB009AD30E /* Resources */,
 				97EE2394025D835E8D0631CA /* [CP] Embed Pods Frameworks */,
+				B04350F220EFAF5D00ADD889 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B04350E920EFAF5D00ADD889 /* PBXTargetDependency */,
 			);
 			name = "mkdwv-ios";
 			productName = KotFuerDieWelt;
 			productReference = B0244DCB20D472EB009AD30E /* mkdwv-ios.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B04350CC20EFAF5800ADD889 /* MitKotDieWeltVerbesern */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B04350EF20EFAF5D00ADD889 /* Build configuration list for PBXNativeTarget "MitKotDieWeltVerbesern" */;
+			buildPhases = (
+				B04350CB20EFAF5800ADD889 /* Resources */,
+				B04350EE20EFAF5D00ADD889 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B04350DC20EFAF5C00ADD889 /* PBXTargetDependency */,
+			);
+			name = MitKotDieWeltVerbesern;
+			productName = MitKotDieWeltVerbesern;
+			productReference = B04350CD20EFAF5800ADD889 /* MitKotDieWeltVerbesern.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B04350D820EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B04350EB20EFAF5D00ADD889 /* Build configuration list for PBXNativeTarget "MitKotDieWeltVerbesern Extension" */;
+			buildPhases = (
+				B04350D520EFAF5C00ADD889 /* Sources */,
+				B04350D620EFAF5C00ADD889 /* Frameworks */,
+				B04350D720EFAF5C00ADD889 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MitKotDieWeltVerbesern Extension";
+			productName = "MitKotDieWeltVerbesern Extension";
+			productReference = B04350D920EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -128,12 +259,18 @@
 		B0244DC320D472EA009AD30E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Fynn Kiwitt";
 				TargetAttributes = {
 					B0244DCA20D472EB009AD30E = {
 						CreatedOnToolsVersion = 9.3;
+					};
+					B04350CC20EFAF5800ADD889 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					B04350D820EFAF5C00ADD889 = {
+						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
@@ -151,6 +288,8 @@
 			projectRoot = "";
 			targets = (
 				B0244DCA20D472EB009AD30E /* mkdwv-ios */,
+				B04350CC20EFAF5800ADD889 /* MitKotDieWeltVerbesern */,
+				B04350D820EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -164,6 +303,23 @@
 				B0244DDC20D472ED009AD30E /* LaunchScreen.storyboard in Resources */,
 				B0244DD920D472ED009AD30E /* Assets.xcassets in Resources */,
 				B0244DD420D472EB009AD30E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B04350CB20EFAF5800ADD889 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B04350D320EFAF5C00ADD889 /* Assets.xcassets in Resources */,
+				B04350D120EFAF5800ADD889 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B04350D720EFAF5C00ADD889 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B04350E520EFAF5D00ADD889 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +379,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B04350D520EFAF5C00ADD889 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B04350E320EFAF5D00ADD889 /* NotificationController.swift in Sources */,
+				B04350E120EFAF5D00ADD889 /* ExtensionDelegate.swift in Sources */,
+				B04350DF20EFAF5D00ADD889 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B04350DC20EFAF5C00ADD889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B04350D820EFAF5C00ADD889 /* MitKotDieWeltVerbesern Extension */;
+			targetProxy = B04350DB20EFAF5C00ADD889 /* PBXContainerItemProxy */;
+		};
+		B04350E920EFAF5D00ADD889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B04350CC20EFAF5800ADD889 /* MitKotDieWeltVerbesern */;
+			targetProxy = B04350E820EFAF5D00ADD889 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B0244DD220D472EB009AD30E /* Main.storyboard */ = {
@@ -240,6 +419,14 @@
 				B0244DDB20D472ED009AD30E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B04350CF20EFAF5800ADD889 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B04350D020EFAF5800ADD889 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -399,6 +586,88 @@
 			};
 			name = Release;
 		};
+		B04350EC20EFAF5D00ADD889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVCPY3737Z;
+				INFOPLIST_FILE = "MitKotDieWeltVerbesern Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fynnkiwitt.KotFuerDieWelt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		B04350ED20EFAF5D00ADD889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVCPY3737Z;
+				INFOPLIST_FILE = "MitKotDieWeltVerbesern Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fynnkiwitt.KotFuerDieWelt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		B04350F020EFAF5D00ADD889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVCPY3737Z;
+				IBSC_MODULE = MitKotDieWeltVerbesern_Extension;
+				INFOPLIST_FILE = MitKotDieWeltVerbesern/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = fynnkiwitt.KotFuerDieWelt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		B04350F120EFAF5D00ADD889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVCPY3737Z;
+				IBSC_MODULE = MitKotDieWeltVerbesern_Extension;
+				INFOPLIST_FILE = MitKotDieWeltVerbesern/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = fynnkiwitt.KotFuerDieWelt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,6 +685,24 @@
 			buildConfigurations = (
 				B0244DE120D472ED009AD30E /* Debug */,
 				B0244DE220D472ED009AD30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B04350EB20EFAF5D00ADD889 /* Build configuration list for PBXNativeTarget "MitKotDieWeltVerbesern Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B04350EC20EFAF5D00ADD889 /* Debug */,
+				B04350ED20EFAF5D00ADD889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B04350EF20EFAF5D00ADD889 /* Build configuration list for PBXNativeTarget "MitKotDieWeltVerbesern" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B04350F020EFAF5D00ADD889 /* Debug */,
+				B04350F120EFAF5D00ADD889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
