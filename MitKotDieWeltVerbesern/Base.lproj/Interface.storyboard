@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MitKotDieWeltVerbesern" customModuleProvider="target">
                     <items>
-                        <label width="121" height="48" alignment="left" text="hello, watch!" id="Uzf-Dg-7FZ"/>
+                        <map height="1" alignment="left" id="Psw-ki-f7W"/>
                     </items>
                 </controller>
             </objects>
