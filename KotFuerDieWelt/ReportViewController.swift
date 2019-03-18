@@ -176,8 +176,13 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
             
         }
         
+        let cancelAlert = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            return
+        }
+        
         actionSheet.addAction(cameraAlert)
         actionSheet.addAction(imageAlert)
+        actionSheet.addAction(cancelAlert)
         
         present(actionSheet, animated: true, completion: nil)
     }
