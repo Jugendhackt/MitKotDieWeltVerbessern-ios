@@ -19,6 +19,7 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
     var locationLbl: UITextView = UITextView()
     let locationManager = CLLocationManager()
     var didBeginEditing = false
+    var commentText = UITextView()
 
     var locationComplete: String = "Tap to add a location"
     
@@ -76,7 +77,7 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         self.scrollView.addSubview(overviewView)
         
         
-        let commentText = UITextView(frame: CGRect(x: 0, y: 420, width: self.view.bounds.width, height: 75))
+        commentText = UITextView(frame: CGRect(x: 0, y: 420, width: self.view.bounds.width, height: 75))
         commentText.isUserInteractionEnabled = true
         commentText.text = "Comment(optional)"
         commentText.textColor = .lightGray
@@ -249,6 +250,7 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         print("Error while updating location " + error.localizedDescription)
     }
 
+
     @objc func submitTrash(){
         let alert = UIAlertController(title: "Thanks", message: "Thank you for submitting!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
@@ -268,7 +270,10 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
             self.trashKindSelector.backgroundColor = .white
             self.scrollView.addSubview(self.trashKindSelector)
             self.adjustTableViewSize(tableView: self.trashKindSelector)
-            // self.didBeginEditing = false
+            // reset the commentText textView
+            self.didBeginEditing = false
+            self.commentText.text = "Comment (optional)"
+            self.commentText.textColor = .lightGray
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
