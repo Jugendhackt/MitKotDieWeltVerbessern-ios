@@ -84,6 +84,7 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         commentText.autocorrectionType = .yes
         commentText.autocapitalizationType = .sentences
         commentText.backgroundColor = .white
+        commentText.delegate = self
         scrollView.delegate = self
         self.scrollView.addSubview(commentText)
     }
