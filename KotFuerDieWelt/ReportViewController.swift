@@ -18,6 +18,7 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
     let trashPictureView = UIButton(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
     var locationLbl: UITextView = UITextView()
     let locationManager = CLLocationManager()
+    var didBeginEditing = false
 
     var locationComplete: String = "Tap to add a location"
     
@@ -87,21 +88,25 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
         self.scrollView.addSubview(commentText)
     }
     
-    
-    func textViewDidBeginEditing(textView: UITextView) {
-        print("function executed")
-        print("Color: \(textView.textColor)")
-        if textView.textColor == .lightGray {
-            print("lightGray")
-            textView.text = ""
-            textView.textColor = .black
+    // if editing is started for the first time field will be cleared
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if (!didBeginEditing) {
+            print("function executed")
+            print("Color: \(textView.textColor!)")
+            if textView.textColor == .lightGray {
+                print("lightGray")
+                textView.text = ""
+                textView.textColor = .black
+            }
         }
     }
-    
-    func textViewDidEndEditing(textView: UITextView) {
+
+    // if nothing was typed in reset the field
+    func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty{
-            textView.text = "Comment(optional)"
+            textView.text = "Comment (optional)"
             textView.textColor = .lightGray
+            didBeginEditing = false
         }
     }
     
@@ -262,6 +267,7 @@ class ReportViewController :UIViewController, UITableViewDelegate, UITableViewDa
             self.trashKindSelector.backgroundColor = .white
             self.scrollView.addSubview(self.trashKindSelector)
             self.adjustTableViewSize(tableView: self.trashKindSelector)
+            // self.didBeginEditing = false
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
