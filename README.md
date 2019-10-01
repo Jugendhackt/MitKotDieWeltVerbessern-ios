@@ -1,5 +1,5 @@
 # Mit Kot die Welt verbessern - iOS App
-<img src="https://github.com/Jugendhackt/mcdwv-backend/blob/master/assets/icon3.svg">
+[![Jugendhackt](https://jhbadge.com/?year=2018&evt=ffm)](https://jugendhackt.org)
 
 
 ## Project Overview
